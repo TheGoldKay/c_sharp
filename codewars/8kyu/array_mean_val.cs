@@ -6,11 +6,7 @@ public class Kata
 {
   public static int GetAverage(int[] marks)
   {
-    int s = 0;
-    foreach(int num in marks)
-    {
-        s += num;
-    }
-    return s / marks.Length;
+    int sum = marks.Aggregate(0, (acc, next) => acc + next);
+    return sum / marks.Length;
   }
 }
